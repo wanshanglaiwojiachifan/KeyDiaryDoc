@@ -56,9 +56,11 @@ GET
 {
 "stat":1,
 "data":{
-  "diaries": [{"did":"445","d":"2013-03-05","content":"mock data"},{"did":"446","d":"2013-03-12","content":"mock data"}],
-  "startDate": 1358956800000,
-	"endDate": 1363622399999
+  "diaries": [{"did":"445","d":"2013-03-05","content":"mock data","created": "2013-03-09 23:22:03"},{"did":"446","d":"2013-03-12","content":"mock data","created": "2013-03-09 23:22:10"}],
+  "startDate": 1285862400000,
+  "startDateFormat": "2010-10-01",
+	"endDate": 1364140799999,
+	"endDateFormat": "2013-03-24"
 }
 }
 ```
@@ -87,7 +89,33 @@ POST
 ```json
 {
 "stat":1,
-"data":{"d":"2013-03-13","content":"mock data","source":2}
+"data":{"d":"2013-03-13","content":"mock data","sid":2}
+}
+```
+
+#### 覆盖日记
+
+如果已存在则更新现有，否则新增一条日记
+
+###### URL
+
+[http://api.keydiary.net/diaries/upsert](http://api.keydiary.net/diaries/upsert)
+
+###### HTTP 请求方式
+
+POST
+
+###### 请求参数
+
+* d 日记日期，格式为 YYYY-MM-DD
+* content 日记内容，长度不能超过 14 个字符
+
+###### 返回结果
+
+```json
+{
+"stat":1,
+"data":{"d":"2013-03-13","content":"mock data","sid":2}
 }
 ```
 
