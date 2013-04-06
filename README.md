@@ -57,12 +57,15 @@ GET
 {
 "stat":1,
 "data":{
-  "diaries": [{"did":"445","d":"2013-03-05","content":"mock data","created": "2013-03-09 23:22:03"},{"did":"446","d":"2013-03-12","content":"mock data","created": "2013-03-09 23:22:10"}],
+  "diaries": [
+    {"did":"445","d":"2013-03-05","content":"mock data","created": "2013-03-09 23:22:03"},
+    {"did":"446","d":"2013-03-12","content":"mock data","created": "2013-03-09 23:22:10"}
+  ],
   "startDate": 1285862400000,
   "startDateFormat": "2010-10-01",
-	"endDate": 1364140799999,
-	"endDateFormat": "2013-03-24"
-}
+  "endDate": 1364140799999,
+  "endDateFormat": "2013-03-24"
+ }
 }
 ```
 
