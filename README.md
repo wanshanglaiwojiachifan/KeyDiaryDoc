@@ -1,4 +1,4 @@
-KeyDiary API doc
+KeyDiary API Documents
 =============
 
 第一版暂时采用 [HTTP BASIC AUTH](http://zh.wikipedia.org/zh-cn/HTTP%E5%9F%BA%E6%9C%AC%E8%AE%A4%E8%AF%81) 验证方式。
@@ -59,8 +59,38 @@ GET
 "stat":1,
 "data":{
   "diaries": [
-    {"did":"445","d":"2013-03-05","content":"mock data","created": "2013-03-09 23:22:03"},
-    {"did":"446","d":"2013-03-12","content":"mock data","created": "2013-03-09 23:22:10"}
+    {
+      "did": "445",
+      "d": "2013-03-05",
+      "content": "mock data",
+      "created": "2013-03-09 23:22:03",
+      // 地理位置
+      "geolocation": {
+        // 纬度值, 格式: 小数点后保留六位
+        "lat": 16.324512,
+        // 经度值, 格式: 小数点后保留六位
+        "lon": 16.312341,
+        // 国家
+        "country": "中国",
+        // 省份
+        "province": "浙江省",
+        // 城市
+        "city": "杭州市",
+        // 区县
+        "district": "西湖区",
+        // 乡镇
+        "town": "古荡镇",
+        // 村庄(社区)
+        "village": "益乐社区",
+        // 主路
+        "main_street": "益乐路",
+        // 支路
+        "sub_street": "",
+        // 标志性POI
+        "poi": "世纪新城东区西门"
+      }
+    },
+    ...
   ],
   "startDate": 1285862400000,
   "startDateFormat": "2010-10-01",
@@ -96,7 +126,38 @@ GET
 "stat":1,
 "data":{
   "diaries": [
-    {"did":"445","d":"2013-03-05","content":"mock data","created": "2013-03-09 23:22:03"},	{"did":"446","d":"2013-03-12","content":"mock data","created": "2013-03-09 23:22:10"}
+    {
+      "did": "445",
+      "d": "2013-03-05",
+      "content": "mock data",
+      "created": "2013-03-09 23:22:03",
+      // 地理位置
+      "geolocation": {
+        // 纬度值, 格式: 小数点后保留六位
+        "lat": 16.324512,
+        // 经度值, 格式: 小数点后保留六位
+        "lon": 16.312341,
+        // 国家
+        "country": "中国",
+        // 省份
+        "province": "浙江省",
+        // 城市
+        "city": "杭州市",
+        // 区县
+        "district": "西湖区",
+        // 乡镇
+        "town": "古荡镇",
+        // 村庄(社区)
+        "village": "益乐社区",
+        // 主路
+        "main_street": "益乐路",
+        // 支路
+        "sub_street": "",
+        // 标志性POI
+        "poi": "世纪新城东区西门"
+      }
+    },
+    ...
   ]
  }
 }
@@ -122,8 +183,38 @@ GET
 
 ```json
 {
-"stat":1,
-"data":{"did":"445","d":"2013-03-05","content":"mock data","created": "2013-03-09 23:22:03"}
+  "stat":1,
+  "data": {
+    "did": "445",
+    "d": "2013-03-05",
+    "content": "mock data",
+    "created": "2013-03-09 23:22:03",
+    // 地理位置
+    "geolocation": {
+      // 纬度值, 格式: 小数点后保留六位
+      "lat": 16.324512,
+      // 经度值, 格式: 小数点后保留六位
+      "lon": 16.312341,
+      // 国家
+      "country": "中国",
+      // 省份
+      "province": "浙江省",
+      // 城市
+      "city": "杭州市",
+      // 区县
+      "district": "西湖区",
+      // 乡镇
+      "town": "古荡镇",
+      // 村庄(社区)
+      "village": "益乐社区",
+      // 主路
+      "main_street": "益乐路",
+      // 支路
+      "sub_street": "",
+      // 标志性POI
+      "poi": "世纪新城东区西门"
+    }
+  }
 }
 ```
 
@@ -142,15 +233,31 @@ POST
 
 ##### 请求参数
 
+Required
+
 * d 日记日期，格式为 YYYY-MM-DD
 * content 日记内容，长度不能超过 14 个字符
+
+Optional
+
+* lat 纬度值, 格式: 小数点后保留六位
+* lon 经度值, 格式: 小数点后保留六位
+* country 国家
+* province 省份
+* city 城市
+* district 区县
+* town 乡镇
+* village 村庄(社区)
+* main_street 主路
+* sub_street 支路
+* poi 标志性 POI
 
 ##### 返回结果
 
 ```json
 {
 "stat":1,
-"data":{"d":"2013-03-13","content":"mock data","sid":2}
+"data":{"d":"2013-03-13","content":"mock data","sid":2, "geolocation": {}}
 }
 ```
 
@@ -168,15 +275,31 @@ POST
 
 ##### 请求参数
 
+Required
+
 * d 日记日期，格式为 YYYY-MM-DD
 * content 日记内容，长度不能超过 14 个字符
+
+Optional
+
+* lat 纬度值, 格式: 小数点后保留六位
+* lon 经度值, 格式: 小数点后保留六位
+* country 国家
+* province 省份
+* city 城市
+* district 区县
+* town 乡镇
+* village 村庄(社区)
+* main_street 主路
+* sub_street 支路
+* poi 标志性 POI
 
 ##### 返回结果
 
 ```json
 {
 "stat":1,
-"data":{"d":"2013-03-13","content":"mock data","sid":2}
+"data":{"d":"2013-03-13","content":"mock data","sid":2, "geolocation": {}}
 }
 ```
 
@@ -194,8 +317,24 @@ POST
 
 ##### 请求参数
 
+Required
+
 * d 日记日期，格式为 YYYY-MM-DD
 * content 日记内容，长度不能超过 14 个字符
+
+Optional
+
+* lat 纬度值, 格式: 小数点后保留六位
+* lon 经度值, 格式: 小数点后保留六位
+* country 国家
+* province 省份
+* city 城市
+* district 区县
+* town 乡镇
+* village 村庄(社区)
+* main_street 主路
+* sub_street 支路
+* poi 标志性 POI
 
 ##### 返回结果
 
@@ -215,17 +354,33 @@ POST
 
 POST
 
-##### 请求参数  
+##### 请求参数
+
+Requried
 
 * d 日记日期，格式为 YYYY-MM-DD
 * content 日记内容，长度不能超过 14 个字符
+
+Optional
+
+* lat 纬度值, 格式: 小数点后保留六位
+* lon 经度值, 格式: 小数点后保留六位
+* country 国家
+* province 省份
+* city 城市
+* district 区县
+* town 乡镇
+* village 村庄(社区)
+* main_street 主路
+* sub_street 支路
+* poi 标志性 POI
 
 ##### 返回结果
 
 ```json
 {
 "stat":1,
-"data":{"d":"2013-03-13","content":"mock data","sid":2}
+"data":{"d":"2013-03-13","content":"mock data","sid":2, "geolocation": {}}
 }
 ```
 
